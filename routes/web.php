@@ -17,9 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('beneficiaries', 'GeneratorController@index');
-Route::get('beneficiaries/{id}', 'GeneratorController@read');
 Route::post('beneficiaries', 'GeneratorController@create');
-Route::put('beneficiaries/{id}', 'GeneratorController@update');
-Route::delete('beneficiaries/{id}', 'GeneratorController@delete');
-Route::get('beneficiaries/{id}/qr-codes', 'GeneratorController@code');

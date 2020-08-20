@@ -12,19 +12,21 @@ class GeneratorController extends Controller
 
     public function create(Request $request) {
         $generator = Generator::create($request->all());
-        return response()->json($generator, 201);
+        return response()->json($generator, 200);
     }
 
     public function read($id) {
         return Generator::find($id);
     }
 
-    public function update(Request $request, Generator $generator) {
+    public function update(Request $request, $id) {
+        $generator = Generator::find($id);
         $generator->update($request->all());
         return response()->json($generator, 200);
     }
 
-    public function delete(Article $article) {
+    public function delete($id) {
+        $generator = Generator::find($id);
         $generator->delete();
         return response()->json(null, 204);
     }
