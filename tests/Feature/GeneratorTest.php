@@ -21,7 +21,7 @@ class GeneratorTest extends TestCase
         $response->assertStatus(200);
     }
     /** @test */
-    public function testCreate() {
+    /*public function testCreate() {
         $this->withoutExceptionHandling();
 
         $respose = $this->post('/beneficiaries', [
@@ -30,5 +30,20 @@ class GeneratorTest extends TestCase
         ]);
         $respose->assertOk();
         $this->assertCount(1, Generator::all());
+    }*/
+    /** @test */
+    /*public function testBasicExample()
+    {
+        $this->post('/beneficiaries', ['name' => 'Test'])
+             ->seeJson([
+                 'created' => true,
+             ]);
+    }*/
+    /** @test */
+    public function testBasicExample2()
+    {
+        $response = $this->call('GET', '/');
+
+        $this->assertEquals(200, $response->status());
     }
 }
