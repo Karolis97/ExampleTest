@@ -1,0 +1,47 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "QR Generator",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/beneficiaries": {
+            "get": {
+                "operationId": "App\\Http\\Controllers\\GeneratorController::index",
+                "responses": {
+                    "200": {
+                        "description": "Display all beneficiaries"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "App\\Http\\Controllers\\GeneratorController::create",
+                "responses": {
+                    "200": {
+                        "description": "Create a beneficiary"
+                    }
+                }
+            }
+        },
+        "/api/beneficiaries/5/": {
+            "get": {
+                "operationId": "App\\Http\\Controllers\\GeneratorController::read",
+                "responses": {
+                    "200": {
+                        "description": "Display a beneficiary"
+                    }
+                }
+            }
+        },
+        "/api/beneficiaries/5/qr-codes": {
+            "get": {
+                "operationId": "App\\Http\\Controllers\\GeneratorController::code",
+                "responses": {
+                    "200": {
+                        "description": "See the beneficiary QR code"
+                    }
+                }
+            }
+        }
+    }
+}
